@@ -232,7 +232,7 @@ image จะเปรียบเสมือน class ส่วน Container �
     sudo docker run --name mysql -e MYSQL_ROOT_PASSWORD=password -d mariadb
     sudo docker run --link mysql:mysql -p 80:80 -d wordpress
 
-เปิด เวปไปที่ localhost/wp-admin
+เปิด เวปไปที่ localhost/wp-admin จะเห็นได้ว่า เราสามารถที่จะติดตั้งและใช้งาน app ได้รวดเร็ว
 
 .. image:: _images/docker-wordpress.png
 สรุปคำสั่ง Docker
