@@ -214,3 +214,11 @@ pseudoxml:
 	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
+
+
+SSH_HOST=203.146.127.179
+SSH_PORT=22
+SSH_USER=root
+SSH_TARGET_DIR=/usr/share/nginx/html/openstack
+rsync_upload:
+	rsync -e "ssh -p $(SSH_PORT)" -P -rvzc --delete $(BUILDDIR)/html $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
